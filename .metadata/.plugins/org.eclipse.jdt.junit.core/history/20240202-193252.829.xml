@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AppTest" project="junit-test-app" tests="17" started="17" failures="0" errors="0" ignored="0">
+  <testsuite name="hn.uth.junit_test_app.AppTest" time="0.001">
+    <testcase name="restaNegativosEnteros" classname="hn.uth.junit_test_app.AppTest" time="0.001"/>
+    <testcase name="sumaCeroYPositivo" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="sumaDecimalesPequenios" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="restaCeroYPositivo1" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="restaCeroYPositivo2" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="restaCeroYPositivo3" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="restaCeroYPositivo4" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="restaCeroYPositivo5" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="restaCeroYPositivo6" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="restaCeroYPositivo7" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="sumaEnterosPositivos" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="restaPositivosDecimales" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="restaPositivosEnteros" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="sumaDecimalesPositivos" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="sumaEnterosNegativos" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="sumaDecimalesNegativos" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+    <testcase name="restaCeroYPositivo" classname="hn.uth.junit_test_app.AppTest" time="0.0"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: hn.uth.junit_test_app.AppTest
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s - in hn.uth.junit_test_app.AppTest

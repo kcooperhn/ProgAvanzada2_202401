@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="hn.uth.junit_test_app.AppTest" time="0.083" tests="17" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\projects\ProgAvan2UTH_202401\junit-test-app\target\test-classes;C:\projects\ProgAvan2UTH_202401\junit-test-app\target\classes;C:\Users\kj_al\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\kj_al\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="America/Tegucigalpa"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="HN"/>
+    <property name="sun.boot.library.path" value="C:\Users\kj_al\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\kj_al\AppData\Local\Temp\surefire8793889793892533975\surefirebooter3806894752323662754.jar C:\Users\kj_al\AppData\Local\Temp\surefire8793889793892533975 2024-02-02T19-40-29_099-jvmRun1 surefire13753964809297212293tmp surefire_011322981980489693872tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\projects\ProgAvan2UTH_202401\junit-test-app\target\test-classes;C:\projects\ProgAvan2UTH_202401\junit-test-app\target\classes;C:\Users\kj_al\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\kj_al\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\kj_al"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-10-18"/>
+    <property name="java.home" value="C:\Users\kj_al\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre"/>
+    <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="C:\projects\ProgAvan2UTH_202401\junit-test-app"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\kj_al\AppData\Local\Temp\surefire8793889793892533975\surefirebooter3806894752323662754.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.5+8"/>
+    <property name="user.name" value="kj_al"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.5+8"/>
+    <property name="localRepository" value="C:\Users\kj_al\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\kj_al\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.5"/>
+    <property name="user.dir" value="C:\projects\ProgAvan2UTH_202401\junit-test-app"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\kj_al\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/kj_al/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin/server;C:/Users/kj_al/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Odoo 16.0.20230725\python;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\maven\apache-maven-3.8.5\bin;C:\Program Files\Kubernetes\Minikube;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Git\cmd;C:\Users\kj_al\AppData\Local\Microsoft\WindowsApps;C:\Users\kj_al\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\kj_al\AppData\Local\GitHubDesktop\bin;C:\Users\kj_al\Desktop;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.5+8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="restaNegativosEnteros" classname="hn.uth.junit_test_app.AppTest" time="0.021"/>
+  <testcase name="sumaCeroYPositivo" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="sumaDecimalesPequenios" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="restaCeroYPositivo1" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="restaCeroYPositivo2" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="restaCeroYPositivo3" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="restaCeroYPositivo4" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="restaCeroYPositivo5" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="restaCeroYPositivo6" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="restaCeroYPositivo7" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="sumaEnterosPositivos" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="restaPositivosDecimales" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="restaPositivosEnteros" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="sumaDecimalesPositivos" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="sumaEnterosNegativos" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="sumaDecimalesNegativos" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+  <testcase name="restaCeroYPositivo" classname="hn.uth.junit_test_app.AppTest" time="0"/>
+</testsuite>

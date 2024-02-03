@@ -1,0 +1,8 @@
+package hn.uth.junit_test_app;
+
+/**
+ * Unit test for simple App.
+ */
+public class AppTest {
+   
+}

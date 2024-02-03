@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\projects\ProgAvan2UTH_202401\.metadata\.plugins\org.eclipse.jdt.core
+444815420.index
+1865797976.index
+2540673247.index
+2026944669.index

@@ -1,0 +1,23 @@
+package hn.uth.junit_test_app;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+    }
+
+    /**
+     * Este método suma dos numeros decimales y responde con otro numero decimal.
+     * @param primerNumero número decimal negativo o positivo.
+     * @param segundoNumero número decimal negativo o positivo.
+     * @return
+     */
+	public static double sumar(double primerNumero, double segundoNumero) {
+		return primerNumero+segundoNumero;
+	}
+}

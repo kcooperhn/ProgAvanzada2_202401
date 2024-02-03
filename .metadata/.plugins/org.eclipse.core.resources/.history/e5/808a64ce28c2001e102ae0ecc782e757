@@ -1,0 +1,29 @@
+package hn.uth.junit_test_app;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * Unit test for simple App.
+ */
+public class AppTest {
+	
+	private static App calculadora;
+	
+	@Before
+	public void inicializacion() {
+		System.out.println("Ejecutando prueba unitaria");
+		
+	}
+   
+	@Test
+	public void sumaEnterosPositivos() {
+		assertTrue(calculadora.sumar(25,30), 55);
+	}
+	
+	@After
+	private void finalizacion() {
+		System.out.println("Prueba unitaria finalizada");
+	}
+}

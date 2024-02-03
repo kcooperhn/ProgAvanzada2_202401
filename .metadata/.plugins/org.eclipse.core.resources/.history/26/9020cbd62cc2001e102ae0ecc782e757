@@ -1,0 +1,17 @@
+package hn.uth.junit_test_app;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+    }
+
+	public double sumar(double primerNumero, double e) {
+		return primerNumero+e;
+	}
+}
