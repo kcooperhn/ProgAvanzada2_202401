@@ -118,7 +118,7 @@ public class AppTest {
 	
 	@Test
 	public void restaCeroYPositivo7() {
-		assertTrue(App.restar(8,5) == 3);
+		assertTrue(App.restar(7,5) == 2);
 	}
 	
 	@AfterClass

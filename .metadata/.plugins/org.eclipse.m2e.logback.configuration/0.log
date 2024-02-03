@@ -221,3 +221,7 @@
 2024-02-02 19:50:35,693 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\junit-test-app\src\main\resources
 2024-02-02 19:50:35,696 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2024-02-02 19:50:35,697 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\junit-test-app\src\test\resources
+2024-02-02 20:32:54,958 [Worker-64: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-02-02 20:32:54,959 [Worker-64: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\junit-test-app\src\main\resources
+2024-02-02 20:32:54,964 [Worker-64: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-02-02 20:32:54,965 [Worker-64: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\junit-test-app\src\test\resources
