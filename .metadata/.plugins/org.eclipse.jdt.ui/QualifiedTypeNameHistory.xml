@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.junit.Test"/>
+    <fullyQualifiedTypeName name="org.junit.Before"/>
+    <fullyQualifiedTypeName name="org.junit.After"/>
+    <fullyQualifiedTypeName name="org.junit.BeforeClass"/>
+    <fullyQualifiedTypeName name="org.junit.AfterClass"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+</qualifiedTypeNameHistroy>
