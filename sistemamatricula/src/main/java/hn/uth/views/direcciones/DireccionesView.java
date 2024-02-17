@@ -23,7 +23,6 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import hn.uth.data.SamplePerson;
-import hn.uth.services.SamplePersonService;
 import hn.uth.views.MainLayout;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -43,10 +42,8 @@ public class DireccionesView extends Div {
     private Grid<SamplePerson> grid;
 
     private Filters filters;
-    private final SamplePersonService samplePersonService;
 
-    public DireccionesView(SamplePersonService SamplePersonService) {
-        this.samplePersonService = SamplePersonService;
+    public DireccionesView() {
         setSizeFull();
         addClassNames("direcciones-view");
 
@@ -226,9 +223,7 @@ public class DireccionesView extends Div {
         grid.addColumn("occupation").setAutoWidth(true);
         grid.addColumn("role").setAutoWidth(true);
 
-        grid.setItems(query -> samplePersonService.list(
-                PageRequest.of(query.getPage(), query.getPageSize(), VaadinSpringDataHelpers.toSpringDataSort(query)),
-                filters).stream());
+    
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER);
         grid.addClassNames(LumoUtility.Border.TOP, LumoUtility.BorderColor.CONTRAST_10);
 

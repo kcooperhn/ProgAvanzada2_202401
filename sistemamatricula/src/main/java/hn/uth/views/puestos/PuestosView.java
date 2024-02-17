@@ -21,7 +21,6 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 import hn.uth.data.SampleAddress;
-import hn.uth.services.SampleAddressService;
 import hn.uth.views.MainLayout;
 import java.util.Optional;
 import org.springframework.data.domain.PageRequest;
@@ -45,14 +44,9 @@ public class PuestosView extends Div implements BeforeEnterObserver {
     private final Button cancel = new Button("Cancel");
     private final Button save = new Button("Save");
 
-    private final BeanValidationBinder<SampleAddress> binder;
-
     private SampleAddress sampleAddress;
 
-    private final SampleAddressService sampleAddressService;
-
-    public PuestosView(SampleAddressService sampleAddressService) {
-        this.sampleAddressService = sampleAddressService;
+    public PuestosView() {
         addClassNames("puestos-view");
 
         // Create UI
@@ -69,9 +63,7 @@ public class PuestosView extends Div implements BeforeEnterObserver {
         grid.addColumn("city").setAutoWidth(true);
         grid.addColumn("state").setAutoWidth(true);
         grid.addColumn("country").setAutoWidth(true);
-        grid.setItems(query -> sampleAddressService.list(
-                PageRequest.of(query.getPage(), query.getPageSize(), VaadinSpringDataHelpers.toSpringDataSort(query)))
-                .stream());
+  
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER);
 
         // when a row is selected or deselected, populate form
@@ -84,12 +76,7 @@ public class PuestosView extends Div implements BeforeEnterObserver {
             }
         });
 
-        // Configure Form
-        binder = new BeanValidationBinder<>(SampleAddress.class);
 
-        // Bind fields. This is where you'd define e.g. validation rules
-
-        binder.bindInstanceFields(this);
 
         cancel.addClickListener(e -> {
             clearForm();
@@ -101,8 +88,8 @@ public class PuestosView extends Div implements BeforeEnterObserver {
                 if (this.sampleAddress == null) {
                     this.sampleAddress = new SampleAddress();
                 }
-                binder.writeBean(this.sampleAddress);
-                sampleAddressService.update(this.sampleAddress);
+               
+
                 clearForm();
                 refreshGrid();
                 Notification.show("Data updated");
@@ -112,8 +99,6 @@ public class PuestosView extends Div implements BeforeEnterObserver {
                         "Error updating the data. Somebody else has updated the record while you were making changes.");
                 n.setPosition(Position.MIDDLE);
                 n.addThemeVariants(NotificationVariant.LUMO_ERROR);
-            } catch (ValidationException validationException) {
-                Notification.show("Failed to update the data. Check again that all values are valid");
             }
         });
     }
@@ -122,7 +107,8 @@ public class PuestosView extends Div implements BeforeEnterObserver {
     public void beforeEnter(BeforeEnterEvent event) {
         Optional<Long> sampleAddressId = event.getRouteParameters().get(SAMPLEADDRESS_ID).map(Long::parseLong);
         if (sampleAddressId.isPresent()) {
-            Optional<SampleAddress> sampleAddressFromBackend = sampleAddressService.get(sampleAddressId.get());
+            /*
+              Optional<SampleAddress> sampleAddressFromBackend = sampleAddressService.get(sampleAddressId.get());
             if (sampleAddressFromBackend.isPresent()) {
                 populateForm(sampleAddressFromBackend.get());
             } else {
@@ -133,7 +119,7 @@ public class PuestosView extends Div implements BeforeEnterObserver {
                 // refresh grid
                 refreshGrid();
                 event.forwardTo(PuestosView.class);
-            }
+            }*/
         }
     }
 
@@ -186,7 +172,6 @@ public class PuestosView extends Div implements BeforeEnterObserver {
 
     private void populateForm(SampleAddress value) {
         this.sampleAddress = value;
-        binder.readBean(this.sampleAddress);
 
     }
 }
