@@ -154,19 +154,25 @@ public class EmpleadosView extends Div implements BeforeEnterObserver {
 
         FormLayout formLayout = new FormLayout();
         nombre = new TextField("Nombre");
-        
+        nombre.setId("txt_nombre");
         nombre.setPrefixComponent(VaadinIcon.USER_CHECK.create());
         
         
         apellido = new TextField("Apellido");
+        apellido.setId("txt_apellido");
         identidad = new TextField("Identidad");
+        identidad.setId("txt_identidad");
         identidad.setPrefixComponent(VaadinIcon.USER_CARD.create());
         
         
         telefono = new TextField("Telefono");
+        telefono.setId("txt_telefono");
         horario = new TextField("Horario");
+        horario.setId("txt_horario");
         puesto = new TextField("Puesto");
+        puesto.setId("txt_puesto");
         sueldo = new NumberField("Sueldo");
+        sueldo.setId("txt_sueldo");
         sueldo.setLabel("Sueldo");
         sueldo.setValue(0.0);
         Div lempiraPrefix = new Div();
@@ -188,9 +194,11 @@ public class EmpleadosView extends Div implements BeforeEnterObserver {
         HorizontalLayout buttonLayout = new HorizontalLayout();
         buttonLayout.setClassName("button-layout");
         cancel.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
+        cancel.setId("btn_cancelar");
         save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        save.setId("btn_guardar");
         eliminar.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_ERROR);
-        
+        eliminar.setId("btn_eliminar");
         
         
         buttonLayout.add(save, eliminar, cancel);
