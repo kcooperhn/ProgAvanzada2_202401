@@ -29,18 +29,24 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 
+import hn.uth.controller.InteractorEmpleados;
+import hn.uth.controller.InteractorImplEmpleados;
 import hn.uth.data.Empleado;
 import hn.uth.data.SamplePerson;
 import hn.uth.views.MainLayout;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 
 @PageTitle("Empleados")
-@Route(value = "empleados/:samplePersonID?/:action?(edit)", layout = MainLayout.class)
+@Route(value = "empleados/:identidad?/:action?(edit)", layout = MainLayout.class)
 @RouteAlias(value = "", layout = MainLayout.class)
 @Uses(Icon.class)
-public class EmpleadosView extends Div implements BeforeEnterObserver {
+public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModelEmpleados {
 
     private final String EMPLOYEE_ID = "identidad";
     private final String EMPLOYEE_EDIT_ROUTE_TEMPLATE = "empleados/%s/edit";
@@ -60,9 +66,14 @@ public class EmpleadosView extends Div implements BeforeEnterObserver {
     private final Button eliminar = new Button("Eliminar", new Icon(VaadinIcon.TRASH));
 
     private Empleado empleadoSeleccionado;
+    private List<Empleado> elementos;
+    private InteractorEmpleados controlador;
 
     public EmpleadosView() {
         addClassNames("empleados-view");
+        
+        controlador = new InteractorImplEmpleados(this);
+        elementos = new ArrayList<>();
 
         // Create UI
         SplitLayout splitLayout = new SplitLayout();
@@ -86,14 +97,14 @@ public class EmpleadosView extends Div implements BeforeEnterObserver {
         // when a row is selected or deselected, populate form
         grid.asSingleSelect().addValueChangeListener(event -> {
             if (event.getValue() != null) {
-                UI.getCurrent().navigate(String.format(EMPLOYEE_EDIT_ROUTE_TEMPLATE, event.getValue().getId()));
+                UI.getCurrent().navigate(String.format(EMPLOYEE_EDIT_ROUTE_TEMPLATE, event.getValue().getIdentidad()));
             } else {
                 clearForm();
                 UI.getCurrent().navigate(EmpleadosView.class);
             }
         });
 
-  
+        controlador.consultarEmpleados();
 
         cancel.addClickListener(e -> {
             clearForm();
@@ -129,22 +140,33 @@ public class EmpleadosView extends Div implements BeforeEnterObserver {
     public void beforeEnter(BeforeEnterEvent event) {
         Optional<String> identidadEmpleado = event.getRouteParameters().get(EMPLOYEE_ID);
         if (identidadEmpleado.isPresent()) {
-            /*Optional<Empleado> samplePersonFromBackend = samplePersonService.get(samplePersonId.get());
-            if (samplePersonFromBackend.isPresent()) {
-                populateForm(samplePersonFromBackend.get());
+            Empleado empledoObtenido = obtenerEmpleado(identidadEmpleado.get());
+            if (empledoObtenido != null) {
+                populateForm(empledoObtenido);
             } else {
                 Notification.show(
-                        String.format("The requested samplePerson was not found, ID = %s", samplePersonId.get()), 3000,
+                        String.format("El empleado con Identidad = %s no existe", identidadEmpleado.get()), 3000,
                         Notification.Position.BOTTOM_START);
                 // when a row is selected but the data is no longer available,
                 // refresh grid
                 refreshGrid();
                 event.forwardTo(EmpleadosView.class);
-            }*/
+            }
         }
     }
 
-    private void createEditorLayout(SplitLayout splitLayout) {
+    private Empleado obtenerEmpleado(String identidad) {
+		Empleado encontrado = null;
+    	for(Empleado emp: elementos) {
+			if(emp.getIdentidad().equals(identidad)) {
+				encontrado = emp;
+				break;
+			}
+		}
+		return encontrado;
+	}
+
+	private void createEditorLayout(SplitLayout splitLayout) {
         Div editorLayoutDiv = new Div();
         editorLayoutDiv.setClassName("editor-layout");
 
@@ -231,6 +253,26 @@ public class EmpleadosView extends Div implements BeforeEnterObserver {
             horario.setValue(value.getHorario());
             puesto.setValue(value.getPuesto());
             sueldo.setValue(value.getSueldo());
-        }        
+        }else {
+        	nombre.setValue("");
+            apellido.setValue("");
+            identidad.setValue("");
+            telefono.setValue("");
+            horario.setValue("");
+            puesto.setValue("");
+            sueldo.setValue(0.0);
+        }     
     }
+
+	@Override
+	public void mostrarEmpleadosEnGrid(List<Empleado> items) {
+		Collection<Empleado> itemsCollection = items;
+		grid.setItems(itemsCollection);
+		this.elementos = items;
+	}
+
+	@Override
+	public void mostrarMensajeError(String mensaje) {
+		Notification.show(mensaje);
+	}
 }
