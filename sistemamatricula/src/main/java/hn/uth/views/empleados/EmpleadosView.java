@@ -4,6 +4,7 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.checkbox.Checkbox;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dependency.Uses;
 import com.vaadin.flow.component.formlayout.FormLayout;
@@ -32,11 +33,15 @@ import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 import hn.uth.controller.InteractorEmpleados;
 import hn.uth.controller.InteractorImplEmpleados;
 import hn.uth.data.Empleado;
+import hn.uth.data.Puesto;
 import hn.uth.data.SamplePerson;
 import hn.uth.views.MainLayout;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.PageRequest;
@@ -58,8 +63,9 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
     private TextField identidad;
     private TextField telefono;
     private TextField horario;
-    private TextField puesto;
+    private ComboBox<Puesto> puesto;
     private NumberField sueldo;
+    private DatePicker fechaNacimiento;
 
     private final Button cancel = new Button("Cancelar");
     private final Button save = new Button("Guardar", new Icon(VaadinIcon.CHECK_CIRCLE));
@@ -67,13 +73,16 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
 
     private Empleado empleadoSeleccionado;
     private List<Empleado> elementos;
+    private List<Puesto> puestos;
     private InteractorEmpleados controlador;
+	private Puesto puestoSeleccionado;
 
     public EmpleadosView() {
         addClassNames("empleados-view");
         
         controlador = new InteractorImplEmpleados(this);
         elementos = new ArrayList<>();
+        puestos = new ArrayList<>();
 
         // Create UI
         SplitLayout splitLayout = new SplitLayout();
@@ -89,8 +98,9 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
         grid.addColumn("apellido").setAutoWidth(true);
         grid.addColumn("telefono").setAutoWidth(true);
         grid.addColumn("horario").setAutoWidth(true);
-        grid.addColumn("puesto").setAutoWidth(true);
+        grid.addColumn("nombre_puesto").setAutoWidth(true).setHeader("Puesto");
         grid.addColumn("sueldo").setAutoWidth(true);
+        grid.addColumn("fecha_nacimiento").setAutoWidth(true).setHeader("Fecha de Nacimiento");
 
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER);
 
@@ -105,6 +115,7 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
         });
 
         controlador.consultarEmpleados();
+        controlador.consultarPuestos();
 
         cancel.addClickListener(e -> {
             clearForm();
@@ -115,11 +126,24 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
             try {
                 if (this.empleadoSeleccionado == null) {
                     this.empleadoSeleccionado = new Empleado();
+                    
+                    this.empleadoSeleccionado.setApellido(apellido.getValue());
+                    this.empleadoSeleccionado.setHorario(horario.getValue());
+                    this.empleadoSeleccionado.setIdentidad(identidad.getValue());
+                    this.empleadoSeleccionado.setNombre(nombre.getValue());
+                    this.empleadoSeleccionado.setSueldo(sueldo.getValue());
+                    this.empleadoSeleccionado.setTelefono(telefono.getValue());
+                    this.empleadoSeleccionado.setPuesto(puesto.getValue().getIdpuesto());
+                    this.empleadoSeleccionado.setFecha_nacimiento(convertDateToLocal(fechaNacimiento.getValue()));
+                    
+                    this.controlador.crearEmpleado(empleadoSeleccionado);
+                    
+                }else {
+                	
                 }
                 
                 clearForm();
                 refreshGrid();
-                Notification.show("Data updated");
                 UI.getCurrent().navigate(EmpleadosView.class);
             } catch (ObjectOptimisticLockingFailureException exception) {
                 Notification n = Notification.show(
@@ -134,6 +158,10 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
              n.addThemeVariants(NotificationVariant.LUMO_WARNING);
         });
     }
+    
+    private Date convertDateToLocal(LocalDate fecha) {
+		return java.sql.Date.valueOf(fecha);
+	}
 
     //METODO QUE SE EJECUTA AL SELECCIONAR UN ELEMENTO DEL GRID
     @Override
@@ -191,8 +219,10 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
         telefono.setId("txt_telefono");
         horario = new TextField("Horario");
         horario.setId("txt_horario");
-        puesto = new TextField("Puesto");
+        puesto = new ComboBox<>("Puesto");
         puesto.setId("txt_puesto");
+        puesto.setItemLabelGenerator(Puesto::getNombre);
+        
         sueldo = new NumberField("Sueldo");
         sueldo.setId("txt_sueldo");
         sueldo.setLabel("Sueldo");
@@ -201,10 +231,15 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
         lempiraPrefix.setText("L.");
         sueldo.setPrefixComponent(lempiraPrefix);
         
+        LocalDate now = LocalDate.now(ZoneId.systemDefault());
+        fechaNacimiento = new DatePicker("Fecha de Nacimiento");
+        fechaNacimiento.setMin(now.plusYears(-70));
+        fechaNacimiento.setMax(now.plusYears(-17));
+        
         //METODO ADD (AGREGA UN CONTROL A LA PANTALLA O DENTRO DE OTRO CONTROL)
         //SI EL ADD ESTÁ SOLO, LO AGREGA DIRECTAMENTE EN LA PANTALLA
         //SI EL ADD ESTA DE ESTA FORMA {CONTROL}.ADD LO AGREGA DENTRO DE {CONTROL}
-        formLayout.add(identidad, nombre, apellido, telefono, horario, puesto, sueldo);
+        formLayout.add(identidad, nombre, apellido, telefono, horario, puesto, sueldo, fechaNacimiento);
 
         editorDiv.add(formLayout);
         createButtonLayout(editorLayoutDiv);
@@ -237,6 +272,8 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
     private void refreshGrid() {
         grid.select(null);
         grid.getDataProvider().refreshAll();
+        this.controlador.consultarEmpleados();
+        this.controlador.consultarPuestos();
     }
 
     private void clearForm() {
@@ -251,7 +288,9 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
             identidad.setValue(value.getIdentidad());
             telefono.setValue(value.getTelefono());
             horario.setValue(value.getHorario());
-            puesto.setValue(value.getPuesto());
+            
+            puestoSeleccionado = buscarPuesto(value.getPuesto());
+            puesto.setValue(puestoSeleccionado);
             sueldo.setValue(value.getSueldo());
         }else {
         	nombre.setValue("");
@@ -259,10 +298,21 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
             identidad.setValue("");
             telefono.setValue("");
             horario.setValue("");
-            puesto.setValue("");
+            puesto.clear();
             sueldo.setValue(0.0);
         }     
     }
+
+	private Puesto buscarPuesto(int idPuesto) {
+		Puesto encontrado = null;
+    	for(Puesto pst: puestos) {
+			if(pst.getIdpuesto() == idPuesto) {
+				encontrado = pst;
+				break;
+			}
+		}
+		return encontrado;
+	}
 
 	@Override
 	public void mostrarEmpleadosEnGrid(List<Empleado> items) {
@@ -273,6 +323,18 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
 
 	@Override
 	public void mostrarMensajeError(String mensaje) {
+		Notification.show(mensaje);
+	}
+
+	@Override
+	public void mostrarPuestosEnCombobox(List<Puesto> items) {
+		Collection<Puesto> itemsCollection = items;
+		puestos = items;
+		puesto.setItems(items);
+	}
+
+	@Override
+	public void mostrarMensajeExito(String mensaje) {
 		Notification.show(mensaje);
 	}
 }

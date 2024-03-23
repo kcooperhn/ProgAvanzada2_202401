@@ -20,7 +20,9 @@ import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
-import hn.uth.data.SampleAddress;
+
+import hn.uth.data.Departamento;
+import hn.uth.data.Puesto;
 import hn.uth.views.MainLayout;
 import java.util.Optional;
 import org.springframework.data.domain.PageRequest;
@@ -33,7 +35,7 @@ public class DepartamentosView extends Div implements BeforeEnterObserver {
     private final String SAMPLEADDRESS_ID = "sampleAddressID";
     private final String SAMPLEADDRESS_EDIT_ROUTE_TEMPLATE = "departamentos/%s/edit";
 
-    private final Grid<SampleAddress> grid = new Grid<>(SampleAddress.class, false);
+    private final Grid<Departamento> grid = new Grid<>(Departamento.class, false);
 
     private TextField street;
     private TextField postalCode;
@@ -44,7 +46,7 @@ public class DepartamentosView extends Div implements BeforeEnterObserver {
     private final Button cancel = new Button("Cancel");
     private final Button save = new Button("Save");
 
-    private SampleAddress sampleAddress;
+    private Departamento sampleAddress;
 
 
     public DepartamentosView() {
@@ -70,7 +72,7 @@ public class DepartamentosView extends Div implements BeforeEnterObserver {
         // when a row is selected or deselected, populate form
         grid.asSingleSelect().addValueChangeListener(event -> {
             if (event.getValue() != null) {
-                UI.getCurrent().navigate(String.format(SAMPLEADDRESS_EDIT_ROUTE_TEMPLATE, event.getValue().getId()));
+                UI.getCurrent().navigate(String.format(SAMPLEADDRESS_EDIT_ROUTE_TEMPLATE, event.getValue().getIdDepartamento()));
             } else {
                 clearForm();
                 UI.getCurrent().navigate(DepartamentosView.class);
@@ -85,7 +87,7 @@ public class DepartamentosView extends Div implements BeforeEnterObserver {
         save.addClickListener(e -> {
             try {
                 if (this.sampleAddress == null) {
-                    this.sampleAddress = new SampleAddress();
+                    this.sampleAddress = new Departamento();
                 }
 
 
@@ -168,7 +170,7 @@ public class DepartamentosView extends Div implements BeforeEnterObserver {
         populateForm(null);
     }
 
-    private void populateForm(SampleAddress value) {
+    private void populateForm(Departamento value) {
         this.sampleAddress = value;
 
     }

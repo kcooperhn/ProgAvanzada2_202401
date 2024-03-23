@@ -1,19 +1,18 @@
 package hn.uth.data;
 
-import jakarta.persistence.Entity;
-import jakarta.validation.constraints.Email;
-import java.time.LocalDate;
+import java.util.Date;
 
-@Entity
-public class Empleado extends AbstractEntity {
+public class Empleado {
 
     private String nombre;
     private String apellido;
     private String identidad;
     private String telefono;
     private String horario;
-    private String puesto;
+    private int puesto;
     private double sueldo;
+    private String nombre_puesto;
+    private Date fecha_nacimiento;
     
 	public String getNombre() {
 		return nombre;
@@ -45,10 +44,10 @@ public class Empleado extends AbstractEntity {
 	public void setHorario(String horario) {
 		this.horario = horario;
 	}
-	public String getPuesto() {
+	public int getPuesto() {
 		return puesto;
 	}
-	public void setPuesto(String puesto) {
+	public void setPuesto(int puesto) {
 		this.puesto = puesto;
 	}
 	public double getSueldo() {
@@ -57,7 +56,16 @@ public class Empleado extends AbstractEntity {
 	public void setSueldo(double sueldo) {
 		this.sueldo = sueldo;
 	}
-
-   
-
+	public String getNombre_puesto() {
+		return nombre_puesto;
+	}
+	public void setNombre_puesto(String nombre_puesto) {
+		this.nombre_puesto = nombre_puesto;
+	}
+	public Date getFecha_nacimiento() {
+		return fecha_nacimiento;
+	}
+	public void setFecha_nacimiento(Date fecha_nacimiento) {
+		this.fecha_nacimiento = fecha_nacimiento;
+	}
 }
