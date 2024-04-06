@@ -49,6 +49,18 @@ public class DatabaseRepositoryImpl {
 		return response.isSuccessful();
 	}
 	
+	public boolean actualizarEmpleado(Empleado cambiar) throws IOException {
+		Call<ResponseBody> call = client.getDB().actualizarEmpleado(cambiar);
+		Response<ResponseBody> response = call.execute();//AQUI ES DONDE SE LLAMA A LA BASE DE DATOS
+		return response.isSuccessful();
+	}
+	
+	public boolean eliminarEmpleado(String id) throws IOException {
+		Call<ResponseBody> call = client.getDB().eliminarEmpleado(id);
+		Response<ResponseBody> response = call.execute();//AQUI ES DONDE SE LLAMA A LA BASE DE DATOS
+		return response.isSuccessful();
+	}
+	
 	public PuestosResponse consultarPuestos() throws IOException {
 		Call<PuestosResponse> call = client.getDB().consultarPuestos();
 		Response<PuestosResponse> response = call.execute();//AQUI ES DONDE SE LLAMA A LA BASE DE DATOS

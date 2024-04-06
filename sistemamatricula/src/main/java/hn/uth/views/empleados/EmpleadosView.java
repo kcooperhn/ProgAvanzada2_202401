@@ -1,5 +1,6 @@
 package hn.uth.views.empleados;
 
+import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -29,7 +30,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
-
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import hn.uth.controller.InteractorEmpleados;
 import hn.uth.controller.InteractorImplEmpleados;
 import hn.uth.data.Empleado;
@@ -125,6 +126,7 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
         save.addClickListener(e -> {
             try {
                 if (this.empleadoSeleccionado == null) {
+                	//ES UNA CREACIÓN
                     this.empleadoSeleccionado = new Empleado();
                     
                     this.empleadoSeleccionado.setApellido(apellido.getValue());
@@ -139,7 +141,16 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
                     this.controlador.crearEmpleado(empleadoSeleccionado);
                     
                 }else {
-                	
+                	//ES UNA ACTUALIZACIÓN
+                	this.empleadoSeleccionado.setApellido(apellido.getValue());
+                    this.empleadoSeleccionado.setHorario(horario.getValue());
+                    this.empleadoSeleccionado.setIdentidad(identidad.getValue());
+                    this.empleadoSeleccionado.setNombre(nombre.getValue());
+                    this.empleadoSeleccionado.setSueldo(sueldo.getValue());
+                    this.empleadoSeleccionado.setTelefono(telefono.getValue());
+                    this.empleadoSeleccionado.setPuesto(puesto.getValue().getIdpuesto());
+                    
+                    this.controlador.actualizarEmpleado(empleadoSeleccionado);
                 }
                 
                 clearForm();
@@ -153,9 +164,14 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
             }
         });
         eliminar.addClickListener( e-> {
-        	 Notification n = Notification.show("Botón eliminar seleccionado, aún no hay nada que eliminar");
-        	 n.setPosition(Position.MIDDLE);
-             n.addThemeVariants(NotificationVariant.LUMO_WARNING);
+        	if(this.empleadoSeleccionado == null) {
+        		mostrarMensajeError("Seleccione un empleado para poder eliminarlo");
+        	}else {
+        		this.controlador.eliminarEmpleado(empleadoSeleccionado.getIdentidad());
+        		 clearForm();
+                 refreshGrid();
+                 UI.getCurrent().navigate(EmpleadosView.class);
+        	}
         });
     }
     
@@ -323,7 +339,9 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
 
 	@Override
 	public void mostrarMensajeError(String mensaje) {
-		Notification.show(mensaje);
+		Notification n = Notification.show(mensaje);
+		n.setPosition(Position.MIDDLE);
+        n.addThemeVariants(NotificationVariant.LUMO_ERROR);
 	}
 
 	@Override
@@ -334,7 +352,19 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
 	}
 
 	@Override
-	public void mostrarMensajeExito(String mensaje) {
-		Notification.show(mensaje);
+	public void mostrarMensajeExito(String mensaje) {		
+		Notification notification = new Notification();
+	    notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+
+	    Icon icon = VaadinIcon.CHECK_CIRCLE.create();
+
+	    var layout = new HorizontalLayout(icon, new Text(mensaje));
+	    layout.setAlignItems(FlexComponent.Alignment.CENTER);
+
+	    notification.add(layout);
+		
+	    notification.setPosition(Position.MIDDLE);
+	    notification.setDuration(5000);
+	    notification.open();
 	}
 }

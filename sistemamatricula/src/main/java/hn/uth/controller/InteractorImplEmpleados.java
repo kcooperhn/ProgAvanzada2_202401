@@ -46,6 +46,34 @@ public class InteractorImplEmpleados implements InteractorEmpleados {
 	}
 	
 	@Override
+	public void actualizarEmpleado(Empleado cambiar) {
+		try {
+			boolean modificado = this.modelo.actualizarEmpleado(cambiar);
+			if(modificado == true) {
+				this.vista.mostrarMensajeExito("Empleado modificado exitosamente");
+			}else {
+				this.vista.mostrarMensajeError("Hubo un problema al modificar el empleado");
+			}
+		}catch(Exception error) {
+			error.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void eliminarEmpleado(String id) {
+		try {
+			boolean eliminado = this.modelo.eliminarEmpleado(id);
+			if(eliminado == true) {
+				this.vista.mostrarMensajeExito("Empleado borrado exitosamente");
+			}else {
+				this.vista.mostrarMensajeError("Hubo un problema al borrar el empleado");
+			}
+		}catch(Exception error) {
+			error.printStackTrace();
+		}
+	}
+	
+	@Override
 	public void consultarPuestos() {
 		try {
 			PuestosResponse respuesta = this.modelo.consultarPuestos();
