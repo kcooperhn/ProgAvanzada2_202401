@@ -11,6 +11,10 @@ import com.vaadin.flow.component.dependency.Uses;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
+import com.vaadin.flow.component.grid.contextmenu.GridContextMenu;
+import com.vaadin.flow.component.grid.contextmenu.GridMenuItem;
+import com.vaadin.flow.component.grid.contextmenu.GridSubMenu;
+import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -31,11 +35,14 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.Component;
 import hn.uth.controller.InteractorEmpleados;
 import hn.uth.controller.InteractorImplEmpleados;
 import hn.uth.data.Empleado;
+import hn.uth.data.EmpleadosReport;
 import hn.uth.data.Puesto;
 import hn.uth.data.SamplePerson;
+import hn.uth.services.ReportGenerator;
 import hn.uth.views.MainLayout;
 
 import java.time.LocalDate;
@@ -43,7 +50,9 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
@@ -114,6 +123,21 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
                 UI.getCurrent().navigate(EmpleadosView.class);
             }
         });
+        
+        GridContextMenu<Empleado> menu = grid.addContextMenu();
+        GridMenuItem<Empleado> assign = menu.addItem("Exportar");
+        GridMenuItem<Empleado> menueliminar = menu.addItem("Eliminar");
+        menueliminar.addMenuItemClickListener( e -> {
+        	
+        });
+        
+        assign.addComponentAsFirst(createIcon(VaadinIcon.FILE_REFRESH));
+
+        GridSubMenu<Empleado> exportSubMenu = assign.getSubMenu();
+        exportSubMenu.addItem("Portable Document Format (.pdf)", event -> {
+        	Notification.show("Generando reporte PDF...");
+        	generarReporte();
+        });
 
         controlador.consultarEmpleados();
         controlador.consultarPuestos();
@@ -173,6 +197,42 @@ public class EmpleadosView extends Div implements BeforeEnterObserver, ViewModel
                  UI.getCurrent().navigate(EmpleadosView.class);
         	}
         });
+    }
+    
+    private void generarReporte() {
+    	ReportGenerator generador = new ReportGenerator();
+    	EmpleadosReport datasource = new EmpleadosReport();
+    	datasource.setEmpleados(elementos);
+    	Map<String, Object> parameters = new HashMap<>();
+    	if(elementos.size() % 2 == 0) {
+    		parameters.put("FIRMA", "firma.png");
+    	}else {
+    		parameters.put("FIRMA", "firma2.png");
+    	}
+    	
+    	boolean generado = generador.generarReportePDF("reporte_personal", parameters, datasource);
+    	if(generado) {
+    		String ubicacion = generador.getReportPath();
+    		Anchor url = new Anchor(ubicacion, "Abrir Reporte");
+    		url.setTarget("_blank");
+    		
+    		Notification notification = new Notification(url);
+    	    notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+    	    notification.setPosition(Position.MIDDLE);
+    	    notification.setDuration(15000);
+    	    notification.open();
+    	}else {
+    		//OCURRIO UN ERROR
+    		mostrarMensajeError("Ocurrió un problema al generar el reporte :(");
+    	}
+	}
+
+	private Component createIcon(VaadinIcon vaadinIcon) {
+        Icon icon = vaadinIcon.create();
+        icon.getStyle().set("color", "var(--lumo-secondary-text-color)")
+                .set("margin-inline-end", "var(--lumo-space-s")
+                .set("padding", "var(--lumo-space-xs");
+        return icon;
     }
     
     private Date convertDateToLocal(LocalDate fecha) {

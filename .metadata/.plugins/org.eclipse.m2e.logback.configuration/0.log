@@ -3844,3 +3844,76 @@ org.eclipse.core.runtime.CoreException: Launch configuration Application referen
 2024-04-05 20:13:00,880 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-04-05 20:13:00,893 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
 2024-04-05 20:13:00,906 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 17:42:35,810 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-04-12 17:43:24,665 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 17:43:24,705 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2024-04-12 17:43:24,727 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 17:53:31,650 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-04-12 17:53:31,652 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 4 resources from src\main\resources to target\classes
+2024-04-12 17:53:31,675 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:07:50,786 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:07:50,810 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:07:50,816 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:08:38,217 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:08:38,226 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:08:38,236 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:09:38,126 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:09:38,143 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:09:38,156 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:24:31,716 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:24:31,738 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:24:31,750 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:24:53,615 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:24:53,629 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:24:53,640 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:30:37,113 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:30:37,123 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:30:37,137 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:32:21,170 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:32:21,183 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:32:21,193 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:39:52,169 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:39:52,178 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:39:52,186 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:43:16,805 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:43:16,815 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:43:16,826 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:44:10,635 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:44:10,655 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:44:10,662 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:47:05,006 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:47:05,013 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:47:05,021 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:48:11,750 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:48:11,758 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:48:11,769 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:48:32,045 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:48:32,073 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:48:32,083 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:49:01,865 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 18:49:01,873 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 18:49:01,882 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 18:56:18,521 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-04-12 18:56:18,522 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2024-04-12 18:56:18,533 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 19:06:49,010 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 19:06:49,019 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src\main\resources to target\classes
+2024-04-12 19:06:49,033 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 19:06:50,120 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-04-12 19:06:50,121 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2024-04-12 19:06:50,126 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 19:08:39,638 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-04-12 19:08:39,639 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 19:08:39,645 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 19:12:29,909 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-04-12 19:12:29,911 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 19:12:29,918 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 19:13:10,654 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-04-12 19:13:10,662 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 8 resources from src\main\resources to target\classes
+2024-04-12 19:13:10,675 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 19:16:58,181 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-04-12 19:16:58,181 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2024-04-12 19:16:58,191 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources
+2024-04-12 19:18:48,005 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-04-12 19:18:48,006 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2024-04-12 19:18:48,016 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\projects\ProgAvan2UTH_202401\sistemamatricula\src\test\resources

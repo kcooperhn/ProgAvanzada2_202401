@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.junit.Test"/>
-    <fullyQualifiedTypeName name="org.junit.Before"/>
-    <fullyQualifiedTypeName name="org.junit.After"/>
-    <fullyQualifiedTypeName name="org.junit.BeforeClass"/>
-    <fullyQualifiedTypeName name="org.junit.AfterClass"/>
-    <fullyQualifiedTypeName name="java.util.Random"/>
-    <fullyQualifiedTypeName name="com.vaadin.flow.component.icon.VaadinIcon"/>
-    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.WebDriverWait"/>
@@ -25,7 +16,6 @@
     <fullyQualifiedTypeName name="okhttp3.logging.HttpLoggingInterceptor.Level"/>
     <fullyQualifiedTypeName name="retrofit2.converter.gson.GsonConverterFactory"/>
     <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="retrofit2.Call"/>
     <fullyQualifiedTypeName name="retrofit2.Response"/>
     <fullyQualifiedTypeName name="hn.uth.model.DatabaseRepositoryImpl"/>
@@ -51,4 +41,23 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.time.ZoneId"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="com.vaadin.flow.component.Text"/>
+    <fullyQualifiedTypeName name="retrofit2.http.DELETE"/>
+    <fullyQualifiedTypeName name="retrofit2.http.Query"/>
+    <fullyQualifiedTypeName name="net.sf.jasperreports.engine.util.JRLoader"/>
+    <fullyQualifiedTypeName name="net.sf.jasperreports.engine.JasperReport"/>
+    <fullyQualifiedTypeName name="net.sf.jasperreports.engine.JasperFillManager"/>
+    <fullyQualifiedTypeName name="net.sf.jasperreports.engine.JasperPrint"/>
+    <fullyQualifiedTypeName name="net.sf.jasperreports.engine.JasperExportManager"/>
+    <fullyQualifiedTypeName name="org.springframework.util.ResourceUtils"/>
+    <fullyQualifiedTypeName name="net.sf.jasperreports.engine.JRDataSource"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.vaadin.flow.component.grid.contextmenu.GridContextMenu"/>
+    <fullyQualifiedTypeName name="com.vaadin.flow.component.grid.contextmenu.GridMenuItem"/>
+    <fullyQualifiedTypeName name="com.vaadin.flow.component.grid.contextmenu.GridSubMenu"/>
+    <fullyQualifiedTypeName name="hn.uth.services.ReportGenerator"/>
+    <fullyQualifiedTypeName name="hn.uth.data.EmpleadosReport"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.vaadin.flow.component.html.Anchor"/>
 </qualifiedTypeNameHistroy>

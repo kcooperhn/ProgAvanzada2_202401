@@ -9,6 +9,7 @@
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
 	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="FIRMA" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -21,14 +22,19 @@
 				<reportElement x="-20" y="0" width="595" height="64" uuid="223a90c7-c94a-49b1-aba4-ce6fb4bd7694"/>
 				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
 			</image>
+			<rectangle>
+				<reportElement x="-20" y="10" width="595" height="40" forecolor="#FFFFFF" backcolor="rgba(166, 197, 247, 0.50980395)" uuid="c0ef8f83-89be-4edc-9f62-4f659032c132"/>
+			</rectangle>
 			<staticText>
-				<reportElement style="Title" x="0" y="5" width="430" height="33" forecolor="#61F2BB" uuid="cf4799a0-8862-492c-9539-904f69e078d2"/>
+				<reportElement style="Title" x="0" y="5" width="430" height="33" forecolor="#2A2966" uuid="cf4799a0-8862-492c-9539-904f69e078d2"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[Listado de Empleados]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="SubTitle" x="0" y="39" width="328" height="22" forecolor="#FFFFFF" uuid="a49f9e55-5e6d-4cee-918b-ed362f3141a0"/>
-				<textElement textAlignment="Right"/>
+				<reportElement style="SubTitle" x="0" y="30" width="268" height="20" forecolor="#E7E6F7" backcolor="#FFFFFF" uuid="a49f9e55-5e6d-4cee-918b-ed362f3141a0"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
 				<text><![CDATA[Empleados registrados en el sistema]]></text>
 			</staticText>
 		</band>
@@ -38,6 +44,9 @@
 	</pageHeader>
 	<columnHeader>
 		<band height="27" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="6" width="554" height="16" forecolor="#FFFFFF" backcolor="rgba(166, 197, 247, 0.50980395)" uuid="024ffa61-c917-4dd6-b268-6b76e33d045d"/>
+			</rectangle>
 			<line>
 				<reportElement positionType="FixRelativeToBottom" x="0" y="22" width="555" height="1" uuid="b862e2eb-eaf9-476e-9db5-57ed083f99e6"/>
 				<graphicElement>
@@ -45,30 +54,30 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="0" y="6" width="100" height="14" uuid="aae0e44d-c745-49e1-9d0b-447ffe523982"/>
+				<reportElement x="0" y="6" width="100" height="16" uuid="aae0e44d-c745-49e1-9d0b-447ffe523982"/>
 				<textElement>
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Identidad]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="100" y="6" width="210" height="14" uuid="01e7db80-b9f9-4fef-b9f3-b377b3a3dfa7"/>
+				<reportElement x="100" y="6" width="210" height="16" uuid="01e7db80-b9f9-4fef-b9f3-b377b3a3dfa7"/>
 				<textElement>
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nombre Completo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="312" y="6" width="242" height="14" uuid="2be507f5-c749-4f94-953d-7763a9d9e52a"/>
+				<reportElement x="312" y="6" width="232" height="16" uuid="2be507f5-c749-4f94-953d-7763a9d9e52a"/>
 				<textElement>
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Puesto desempeñado]]></text>
+				<text><![CDATA[Puesto Desempeñado]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="20" splitType="Stretch">
+		<band height="16" splitType="Stretch">
 			<line>
 				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="39f48c34-b6ee-47f7-8876-c3aaee1eb021"/>
 				<graphicElement>
@@ -115,6 +124,21 @@
 		</band>
 	</pageFooter>
 	<summary>
-		<band splitType="Stretch"/>
+		<band height="128" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="238" y="20" width="85" height="70" uuid="d435fbcc-c3ba-4f36-9c6c-99897e66901a"/>
+				<imageExpression><![CDATA[$P{FIRMA}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="180" y="89" width="200" height="1" uuid="b2adff84-4ece-4e91-8c2f-a49cc8eed2db"/>
+			</line>
+			<staticText>
+				<reportElement x="229" y="95" width="100" height="20" uuid="78e52b7f-72b5-4155-8fce-b514a39b806d"/>
+				<textElement textAlignment="Center">
+					<font isItalic="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Firma de Autorización]]></text>
+			</staticText>
+		</band>
 	</summary>
 </jasperReport>
